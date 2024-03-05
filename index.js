@@ -2,7 +2,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const port = 3001;
+const port = 3002;
 const cors = require('cors');
 
 const jsonData = [
@@ -24,7 +24,6 @@ app.use(cors());
 app.get('/senddata', async (req, res) => {
  try {
     console.log('senddata endpoint hit');
-    // Set the Content-Type header to application/json
     await axios.put('http://localhost:3000/api/insertdogdata', jsonData, {
         headers: {
             'Content-Type': 'application/json'
